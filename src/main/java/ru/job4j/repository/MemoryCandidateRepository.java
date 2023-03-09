@@ -11,6 +11,7 @@ public class MemoryCandidateRepository implements CandidateRepository {
     private static final MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
     private int nextId = 1;
     private final Map<Integer, Candidate> candidates = new HashMap<>();
+
     public MemoryCandidateRepository() {
         save(new Candidate(0, "Anton", "Middle"));
         save(new Candidate(0, "Bob", "Junior"));
@@ -19,7 +20,9 @@ public class MemoryCandidateRepository implements CandidateRepository {
         save(new Candidate(0, "Aleks", "Senior"));
     }
 
-    public static MemoryCandidateRepository getInstance() {return INSTANCE;}
+    public static MemoryCandidateRepository getInstance() {
+        return INSTANCE;
+    }
 
     @Override
     public Candidate save(Candidate candidate) {

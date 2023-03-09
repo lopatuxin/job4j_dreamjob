@@ -45,15 +45,24 @@ public class Candidate {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         Candidate candidate = (Candidate) o;
 
-        if (id != candidate.id) return false;
-        if (name != null ? !name.equals(candidate.name) : candidate.name != null) return false;
-        if (description != null ? !description.equals(candidate.description) : candidate.description != null)
+        if (id != candidate.id) {
             return false;
+        }
+        if (name != null ? !name.equals(candidate.name) : candidate.name != null) {
+            return false;
+        }
+        if (description != null ? !description.equals(candidate.description) : candidate.description != null) {
+            return false;
+        }
         return creationDate != null ? creationDate.equals(candidate.creationDate) : candidate.creationDate == null;
     }
 
