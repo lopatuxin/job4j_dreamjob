@@ -1,6 +1,7 @@
 package ru.job4j.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Candidate {
     private int id;
@@ -59,6 +60,7 @@ public class Candidate {
 
     @Override
     public int hashCode() {
-        return id;
+        return Objects.hash(id);
     }
+
 }
