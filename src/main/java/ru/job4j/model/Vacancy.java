@@ -9,12 +9,15 @@ public class Vacancy {
     private String title;
 
     private String description;
-    private final LocalDateTime creationDate;
+    private final LocalDateTime creationDate = LocalDateTime.now();
+
+    public Vacancy() {
+
+    }
 
     public Vacancy(int id, String title, String description) {
         this.id = id;
         this.title = title;
-        this.creationDate = LocalDateTime.now();
         this.description = description;
     }
 
