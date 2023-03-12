@@ -1,14 +1,14 @@
 package ru.job4j.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.job4j.model.Candidate;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-
+@Repository
 public class MemoryCandidateRepository implements CandidateRepository {
-    private static final MemoryCandidateRepository INSTANCE = new MemoryCandidateRepository();
     private int nextId = 1;
     private final Map<Integer, Candidate> candidates = new HashMap<>();
 
@@ -18,10 +18,6 @@ public class MemoryCandidateRepository implements CandidateRepository {
         save(new Candidate(0, "Bill", "Intern"));
         save(new Candidate(0, "Rob", "Junior+"));
         save(new Candidate(0, "Aleks", "Senior"));
-    }
-
-    public static MemoryCandidateRepository getInstance() {
-        return INSTANCE;
     }
 
     @Override
