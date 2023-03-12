@@ -26,7 +26,7 @@ public class CandidateController {
     @PostMapping("/create")
     public String create(@ModelAttribute Candidate candidate) {
         candidateRepository.save(candidate);
-        return "redirect:/vacancies";
+        return "redirect:/candidates";
     }
 
     @GetMapping("/{id}")
@@ -36,8 +36,8 @@ public class CandidateController {
             model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
             return "errors/404";
         }
-        model.addAttribute("vacancy", candidateOptional.get());
-        return "vacancies/one";
+        model.addAttribute("candidate", candidateOptional.get());
+        return "candidates/one";
     }
 
     @PostMapping("/update")
@@ -47,7 +47,7 @@ public class CandidateController {
             model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
             return "errors/404";
         }
-        return "redirect:/vacancies";
+        return "redirect:/candidates";
     }
 
     @GetMapping("/delete/{id}")
@@ -57,6 +57,6 @@ public class CandidateController {
             model.addAttribute("message", "Вакансия с указанным идентификатором не найдена");
             return "errors/404";
         }
-        return "redirect:/vacancies";
+        return "redirect:/candidates";
     }
 }
