@@ -1,10 +1,14 @@
 package ru.job4j.service;
 
+import org.springframework.stereotype.Service;
 import ru.job4j.model.Candidate;
 import ru.job4j.repository.CandidateRepository;
+
+import javax.annotation.concurrent.ThreadSafe;
 import java.util.Collection;
 import java.util.Optional;
-
+@ThreadSafe
+@Service
 public class SimpleCandidateService implements CandidateService {
 
     private final CandidateRepository candidateRepository;

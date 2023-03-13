@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.model.Candidate;
 import ru.job4j.service.CandidateService;
-import ru.job4j.service.SimpleCandidateService;
 
+import javax.annotation.concurrent.ThreadSafe;
+
+@ThreadSafe
 @Controller
 @RequestMapping("/candidates")
 public class CandidateController {
