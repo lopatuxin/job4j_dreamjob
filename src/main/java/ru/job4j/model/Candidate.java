@@ -8,17 +8,26 @@ public class Candidate {
     private String name;
     private String description;
     private final LocalDateTime creationDate = LocalDateTime.now();
+    private int fileId;
 
     public Candidate() {
 
     }
 
-    public Candidate(int id, String name, String description) {
+    public Candidate(int id, String name, String description, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.fileId = fileId;
     }
 
+    public int getFileId() {
+        return fileId;
+    }
+
+    public void setFileId(int fileId) {
+        this.fileId = fileId;
+    }
     public int getId() {
         return id;
     }
