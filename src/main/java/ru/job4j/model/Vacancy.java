@@ -1,8 +1,11 @@
 package ru.job4j.model;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Map;
 import java.util.Objects;
+
+import static java.time.LocalDateTime.now;
 
 public class Vacancy {
     public static final Map<String, String> COLUMN_MAPPING = Map.of(
@@ -19,7 +22,7 @@ public class Vacancy {
     private String title;
 
     private String description;
-    private final LocalDateTime creationDate = LocalDateTime.now();
+    private final LocalDateTime creationDate = now().truncatedTo(ChronoUnit.MINUTES);
     private boolean visible;
     private int cityId;
     private int fileId;
