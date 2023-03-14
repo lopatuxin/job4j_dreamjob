@@ -19,6 +19,7 @@ public class SimpleVacancyService implements VacancyService {
         this.vacancyRepository = sql2oVacancyRepository;
         this.fileService = fileService;
     }
+
     @Override
     public Vacancy save(Vacancy vacancy, FileDto image) {
         saveNewFile(vacancy, image);

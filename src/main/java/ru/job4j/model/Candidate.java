@@ -28,6 +28,7 @@ public class Candidate {
     public void setFileId(int fileId) {
         this.fileId = fileId;
     }
+
     public int getId() {
         return id;
     }
